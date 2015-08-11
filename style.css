@@ -2,8 +2,100 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial,serif;
+    -webkit-user-select: none;
+}
+.pay-wrapper {
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: grey;
+	padding-top: 206px; 
 }
 .pay {
-    width: 605px;
-    background: white;
+	background: white;
+	    border-radius: 10px;
+     width: 611px;
+    height: 377px;
+    margin-left: 335px; /* или отцентрировать с помощью position */
+    padding: 19px 17px;
+}
+.pay__header {
+	    font-size: 30px;
+    font-weight: 100;
+    font-family: Arial;
+}
+.pay__title {
+font-size: 14px;
+    font-weight: 100;
+    margin-top: 12px;
+}
+.pay__type {
+	list-style: none;
+	margin-top: 7px;
+}
+.pay__type-item {
+	display: inline-block;
+	margin-right: 3px;
+    margin-left: 3px;
+}
+.pay__type-item:last-of-type {
+	margin-right: 0;
+}
+.pay__button {
+	width: 135px;
+    height: 75px;
+    border-radius: 5px;
+    border: 1px solid #D2D2D2;
+        box-shadow: 0 4px 10px 0px #D2D2D2;
+    background: -webkit-linear-gradient(bottom, #E9E9E9 5%, white 100% );
+    
+}
+.pay__button_privat24:after {
+	     content: "";
+    display: block;
+    width: 107px;
+    background: url("img/svg/privat24.svg") no-repeat;
+    height: 23px;
+    margin-top: -4px;
+    margin-left: 13px;
+}
+
+.pay__button_visa:after {
+	    content: "";
+    display: block;
+    width: 113px;
+    background: url("img/svg/visa.svg") no-repeat;
+    height: 100px;
+    margin-top: 22px;
+    margin-left: 10px;
+}
+
+.pay__button_yandex:after {
+	    content: "";
+    display: block;
+    width: 101px;
+    background: url("img/svg/yandex.svg") no-repeat;
+    height: 100px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+.pay__button_sms:after {
+	    content: "";
+    display: block;
+    width: 101px;
+    background: url("img/svg/sms.svg") no-repeat;
+    height: 50px;
+    margin-left: 28px;
+}
+
+.pay__button:hover {
+    background: -webkit-linear-gradient(top, #E9E9E9 5%, white 100% );
+
+}
+.pay__button:focus {
+	outline: none;
 }
