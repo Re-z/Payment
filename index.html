@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Pay</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body>
     <div class="pay-wrapper">
@@ -19,11 +20,36 @@
             		<li class="pay__type-item"><button class="pay__button pay__button_yandex"></button></li>
 
             		<li class="pay__type-item"><button class="pay__button pay__button_sms"></button></li>
-
-
             	</ul>
             </nav>
+            <div class="pay__content">
+            	<div class="pay__privat24">
+		            <label for="pay-ammount"><h6 class="pay__title">Сумма платежа</h6></label>
+		            <input id="pay-ammount"type="text" class="pay__ammount">
+		            <span class="pay__ammount-currency">грн.</span>
+		            <div class="clearfix"></div>
+		            <p class="pay__privat24-text">С карты спишется также комиссия 0,5%</p>
+	            </div>
+			</div>
         </section>
     </div>
+
+
+
+
+
+    <script type="text/javascript">
+    	$('document').ready(function(){
+
+    		$('.pay__button').mousedown(function(){
+    			$(this).attr('style' , 'box-shadow: 2px 2px 8px 1px grey inset');
+    		})
+    		$('.pay__button').mouseup(function(){
+    			$(this).removeAttr('style' , 'box-shadow: 2px 2px 8px 1px grey inset')
+    		})
+
+
+    	})
+    </script>
 </body>
 </html>
