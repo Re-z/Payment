@@ -13,7 +13,7 @@
             <h6 class="pay__title">Выберите тип платежа</h6>
             <nav>
             	<ul class="pay__type">
-            		<li class="pay__type-item"><button class="pay__button pay__button_privat24"></button></li>
+            		<li class="pay__type-item"><button id="privat24-btn" class="pay__button pay__button_pressed pay__button_privat24"></button></li>
 
             		<li class="pay__type-item"><button class="pay__button pay__button_visa"></button></li>
 
@@ -22,15 +22,30 @@
             		<li class="pay__type-item"><button class="pay__button pay__button_sms"></button></li>
             	</ul>
             </nav>
-            <div class="pay__content">
-            	<div class="pay__privat24">
+            <div id="pay__content">
+            	<div id="pay__privat24">
 		            <label for="pay-ammount"><h6 class="pay__title">Сумма платежа</h6></label>
 		            <input id="pay-ammount"type="text" class="pay__ammount">
 		            <span class="pay__ammount-currency">грн.</span>
 		            <div class="clearfix"></div>
 		            <p class="pay__privat24-text">С карты спишется также комиссия 0,5%</p>
 	            </div>
+                <div class="pay__sms">
+                    <h6 class="pay__title">Сумма платежа</h6>
+                    <select class="pay__sms-ammount">
+                        <option>5 гривен</option>
+                        <option selected>10 гривен</option>
+                        <option>22.5 гривен</option>
+
+                    </select>
+                </div>
+
 			</div>
+        <div class="pay__footer">
+            <button class="pay__footer-btn">Оплатить</button>
+            <p class="pay__footer-text">После нажатия кнопки "Оплатить" вы будете перенаправлены на сайт money.ua</p>
+        </div>
+
         </section>
     </div>
 
@@ -40,13 +55,22 @@
 
     <script type="text/javascript">
     	$('document').ready(function(){
-
+            //Shadow effect on pressed buttons
     		$('.pay__button').mousedown(function(){
-    			$(this).attr('style' , 'box-shadow: 2px 2px 8px 1px grey inset');
-    		})
-    		$('.pay__button').mouseup(function(){
-    			$(this).removeAttr('style' , 'box-shadow: 2px 2px 8px 1px grey inset')
-    		})
+                $(this).addClass("pay__button_pressed");
+            });
+            $('.pay__button').mouseup(function(){
+                $(this).removeClass("pay__button_pressed");
+            });
+            $('.pay__button').click(function(){
+                $('.pay__button').removeClass('pay__button_pressed');
+                $(this).addClass('pay__button_pressed')
+            })
+            //
+            $('#privat24-btn').click(function(){
+                $('#pay__content').empty();
+                $('#pay__privat24').css('display', 'block');
+            })
 
 
     	})
