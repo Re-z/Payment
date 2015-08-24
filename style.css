@@ -8,8 +8,7 @@
 .clearfix {
 	clear: both;
 }
-.pay-wrapper {
-	
+.pay-background {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -18,14 +17,17 @@
 	background: black;
 	padding-top: 206px; 
 }
-.pay {
+.pay-wrapper {
 	background: white;
-	    border-radius: 10px;
+    border-radius: 10px;
      width: 611px;
     height: 377px;
     margin: 0 auto;
     padding-top: 19px;
     overflow: hidden;
+}
+.pay {
+    display: block;
 }
 .pay__header {
 	    font-size: 30px;
@@ -34,8 +36,8 @@
     margin-left: 19px;
 }
 .pay__title {
-font-size: 14px;
-    font-weight: 100;
+font-size: 13px;
+    font-weight: 600;
     margin-top: 12px;
     margin-left: 19px
 }
@@ -134,11 +136,10 @@ font-size: 14px;
 }
 #pay__privat24 {
     display: block;
-    outline: 1px solid red;
     height: 87px;
 
 }
-.pay__privat24-text {
+.pay__text {
 	font-size: 13px;
     margin-left: 19px;
 }
@@ -177,7 +178,6 @@ font-size: 14px;
 #pay__sms {
     position: relative;
     display: none;
-    outline: 1px solid goldenrod;
     height: 87px;
 }
 #pay__sms-amount {
@@ -186,10 +186,11 @@ font-size: 14px;
     height: 43px;
     margin-left: 21px;
     margin-top: 7px;
+    margin-bottom: 7px;
     border-radius: 5px;
     position: relative;
     cursor: pointer;
-    color: grey;
+    color: black;
     font-size: 13px;
     padding-top: 12px;
     padding-left: 9px;
@@ -216,10 +217,11 @@ font-size: 14px;
 .pay__sms-chosen, .pay__sms-choice {
     list-style: none;
 }
+
 .pay__sms-choice {
     display: none;
     width: 150px;
-    height: 80px;
+    height: 77px;
     position: absolute;
     top: -22px;
     left: -5px;
@@ -229,13 +231,24 @@ font-size: 14px;
     border: 1px solid #d2d2d2;
     border-radius: 5px;
     box-shadow: 0 2px 16px 2px gray;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 .pay__sms-choice li {
-    height: 19px;
-    margin-top: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 .pay__sms-choice li:hover {
-    background-color: gold;
+    background-color: lightgoldenrodyellow;
     color: red;
     text-decoration: underline;
+}
+.pay__sms-choice_checked {
+    background-image: url("img/sprite.png");
+    background-position: 0 13px;
+    width: 15px;
+    height: 13px;
+    position: absolute;
+    display: block;
+    left: 14px;
 }

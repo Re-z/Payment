@@ -7,54 +7,53 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body>
-    <div class="pay-wrapper">
-        <section class="pay">
-            <h4 class="pay__header">Пополнение счета</h4>
-            <h6 class="pay__title">Выберите тип платежа</h6>
-            <nav>
-            	<ul class="pay__type">
-            		<li class="pay__type-item"><button id="privat24-btn" class="pay__button pay__button_pressed pay__button_privat24"></button></li>
+    <div class="pay-background">
+		<div class="pay-wrapper">
+			<section class="pay">
+				<h4 class="pay__header">Пополнение счета</h4>
+				<h6 class="pay__title">Выберите тип платежа</h6>
+				<nav>
+					<ul class="pay__type">
+						<li class="pay__type-item"><button id="privat24-btn" class="pay__button pay__button_pressed pay__button_privat24"></button></li>
 
-            		<li class="pay__type-item"><button class="pay__button pay__button_visa"></button></li>
+						<li class="pay__type-item"><button class="pay__button pay__button_visa"></button></li>
 
-            		<li class="pay__type-item"><button class="pay__button pay__button_yandex"></button></li>
+						<li class="pay__type-item"><button class="pay__button pay__button_yandex"></button></li>
 
-            		<li class="pay__type-item"><button class="pay__button pay__button_sms"></button></li>
-            	</ul>
-            </nav>
-            <div id="pay__content">
-
-            	<div id="pay__privat24">
-		            <label for="pay-ammount"><h6 class="pay__title">Сумма платежа</h6></label>
-		            <input id="pay-ammount" type="text" class="pay__ammount">
-		            <span class="pay__ammount-currency">грн.</span>
-		            <div class="clearfix"></div>
-		            <p class="pay__privat24-text">С карты спишется также комиссия 0,5%</p>
-	            </div>
-
-                <div id="pay__sms">
-                    <h6 class="pay__title">Сумма платежа</h6>
-					<div id="pay__sms-amount">
-						<ul class="pay__sms-chosen">
-							<li>10 гривен</li>
-							<li>
-								<ul class="pay__sms-choice">
-									<li>5 гривен</li>
-									<li>10 гривен</li>
-									<li>22.5 гривен</li>
-								</ul>
-							</li>
-						</ul>
+						<li class="pay__type-item"><button class="pay__button pay__button_sms"></button></li>
+					</ul>
+				</nav>
+					<div id="pay__privat24">
+						<label for="pay-ammount"><h6 class="pay__title">Сумма платежа</h6></label>
+						<input id="pay-ammount" type="text" class="pay__ammount">
+						<span class="pay__ammount-currency">грн.</span>
+						<div class="clearfix"></div>
+						<p class="pay__text">С карты спишется также комиссия 0,5%</p>
 					</div>
-                </div>
 
-			</div>
-        <div class="pay__footer">
-            <button class="pay__footer-btn">Оплатить</button>
-            <p class="pay__footer-text">После нажатия кнопки "Оплатить" вы будете перенаправлены на сайт money.ua</p>
-        </div>
+					<div id="pay__sms">
+						<h6 class="pay__title">Сумма платежа</h6>
+						<div id="pay__sms-amount">
+							<ul class="pay__sms-chosen">
+								<li class="pay__sms-chosen-item">10 гривен</li>
+								<li>
+									<ul class="pay__sms-choice">
+										<li>5 гривен</li>
+										<li><span class="pay__sms-choice_checked"></span>10 гривен</li>
+										<li>22.50 гривен</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<p class="pay__text">Со счета спишется также комиссия оператора в размере 6 грн.</p>
+				</div>
+				<div class="pay__footer">
+					<button class="pay__footer-btn">Оплатить</button>
+					<p class="pay__footer-text">После нажатия кнопки "Оплатить" вы будете перенаправлены на сайт money.ua</p>
+				</div>
+			</section>
 
-        </section>
+		</div>
     </div>
 
 
@@ -74,20 +73,39 @@
                 $('.pay__button').removeClass('pay__button_pressed');
                 $(this).addClass('pay__button_pressed')
             });
-
+			//hide-show content sections
 			$('.pay__button_sms').click(function(){
 				$('#pay__privat24').hide();
 				$('#pay__sms').show();
+				$('.pay__footer-text').hide();
+				$('.pay__footer-btn').removeClass('pay__footer-btn_privat24').addClass('pay__footer-btn_sms')
 			});
+
 			$('.pay__button_privat24').click(function(){
 				$('#pay__sms').hide();
 				$('#pay__privat24').show();
+				$('.pay__footer-text').show();
+				$('.pay__footer-btn').removeClass('pay__footer-btn_sms').addClass('pay__footer-btn_privat24')
 			});
 
+			//hide-show sms pay-list
 			$('#pay__sms-amount').click(function(){
 				$('.pay__sms-choice').toggle();
-			})
+			});
 
+			//choosing current pay amount
+			var $smsChoiceChecked = $('<span class="pay__sms-choice_checked"</span>');
+			$('.pay__sms-choice li').click(function(){
+				$('.pay__sms-chosen-item').text('');
+				$(this).clone().appendTo('.pay__sms-chosen-item');
+				$('#pay__sms-amount').find('.pay__sms-choice_checked').remove();
+				$(this).prepend($smsChoiceChecked);
+			});
+
+			//appear sms pay window
+			$('.pay__footer-btn_sms').click(function(){
+				$('.pay').hide();
+			})
 
     	})
     </script>
