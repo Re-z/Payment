@@ -23,21 +23,29 @@
             	</ul>
             </nav>
             <div id="pay__content">
+
             	<div id="pay__privat24">
 		            <label for="pay-ammount"><h6 class="pay__title">Сумма платежа</h6></label>
-		            <input id="pay-ammount"type="text" class="pay__ammount">
+		            <input id="pay-ammount" type="text" class="pay__ammount">
 		            <span class="pay__ammount-currency">грн.</span>
 		            <div class="clearfix"></div>
 		            <p class="pay__privat24-text">С карты спишется также комиссия 0,5%</p>
 	            </div>
-                <div class="pay__sms">
-                    <h6 class="pay__title">Сумма платежа</h6>
-                    <select class="pay__sms-ammount">
-                        <option>5 гривен</option>
-                        <option selected>10 гривен</option>
-                        <option>22.5 гривен</option>
 
-                    </select>
+                <div id="pay__sms">
+                    <h6 class="pay__title">Сумма платежа</h6>
+					<div id="pay__sms-amount">
+						<ul class="pay__sms-chosen">
+							<li>10 гривен</li>
+							<li>
+								<ul class="pay__sms-choice">
+									<li>5 гривен</li>
+									<li>10 гривен</li>
+									<li>22.5 гривен</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
                 </div>
 
 			</div>
@@ -65,12 +73,20 @@
             $('.pay__button').click(function(){
                 $('.pay__button').removeClass('pay__button_pressed');
                 $(this).addClass('pay__button_pressed')
-            })
-            //
-            $('#privat24-btn').click(function(){
-                $('#pay__content').empty();
-                $('#pay__privat24').css('display', 'block');
-            })
+            });
+
+			$('.pay__button_sms').click(function(){
+				$('#pay__privat24').hide();
+				$('#pay__sms').show();
+			});
+			$('.pay__button_privat24').click(function(){
+				$('#pay__sms').hide();
+				$('#pay__privat24').show();
+			});
+
+			$('#pay__sms-amount').click(function(){
+				$('.pay__sms-choice').toggle();
+			})
 
 
     	})

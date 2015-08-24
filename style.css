@@ -15,7 +15,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: grey;
+	background: black;
 	padding-top: 206px; 
 }
 .pay {
@@ -23,14 +23,14 @@
 	    border-radius: 10px;
      width: 611px;
     height: 377px;
-    margin-left: 335px; /* или отцентрировать с помощью position */
+    margin: 0 auto;
     padding-top: 19px;
     overflow: hidden;
 }
 .pay__header {
 	    font-size: 30px;
     font-weight: 100;
-    font-family: Arial;
+    font-family: Arial,serif;
     margin-left: 19px;
 }
 .pay__title {
@@ -56,7 +56,7 @@ font-size: 14px;
     height: 75px;
     border-radius: 5px;
     border: 1px solid #D2D2D2;
-        box-shadow: 0 4px 10px 0px #D2D2D2;
+        box-shadow: 0 4px 10px 0 #D2D2D2;
     background: -webkit-linear-gradient(bottom, #E9E9E9 5%, white 100% );
    cursor: pointer; 
 }
@@ -115,7 +115,7 @@ font-size: 14px;
     padding: 2px 5px;
     border: 1px solid #d2d2d2;
     border-radius: 6px;
-    box-shadow: 0px 2px 6px 0px lightgrey inset;
+    box-shadow: 0 2px 6px 0 lightgrey inset;
     float: left;
         margin-bottom: 3px;
         margin-left: 19px;
@@ -133,7 +133,10 @@ font-size: 14px;
     font-size: 14px;
 }
 #pay__privat24 {
-    display: none;
+    display: block;
+    outline: 1px solid red;
+    height: 87px;
+
 }
 .pay__privat24-text {
 	font-size: 13px;
@@ -171,18 +174,68 @@ font-size: 14px;
     top: 11px;
     left: 11px;
 }
-.pay__sms {
+#pay__sms {
     position: relative;
+    display: none;
+    outline: 1px solid goldenrod;
+    height: 87px;
 }
-.pay__sms-ammount {
-        margin-left: 19px;
-    margin-top: 6px;
-    width: 142px;
-    height: 45px;
-    padding-left: 7px;
-
+#pay__sms-amount {
+    width: 140px;
+    border: 1px solid #d2d2d2;
+    height: 43px;
+    margin-left: 21px;
+    margin-top: 7px;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    color: grey;
+    font-size: 13px;
+    padding-top: 12px;
+    padding-left: 9px;
 }
-.pay__sms-ammount option {
+#pay__sms-amount:after {
+    content: '';
+    display: block;
+    border: 5px solid transparent;
+    border-top-color: #d2d2d2;
+    background-position: 0 12px;
     position: absolute;
-    top: 20px;
+    left: 113px;
+    top: 18px;
+}
+#pay__sms-amount:before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 43px;
+    border-left: 1px solid #d2d2d2;
+    left: 99px;
+    top: 0;
+}
+.pay__sms-chosen, .pay__sms-choice {
+    list-style: none;
+}
+.pay__sms-choice {
+    display: none;
+    width: 150px;
+    height: 80px;
+    position: absolute;
+    top: -22px;
+    left: -5px;
+    background-color: white;
+    text-align: center;
+    z-index: 10;
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+    box-shadow: 0 2px 16px 2px gray;
+}
+.pay__sms-choice li {
+    height: 19px;
+    margin-top: 5px;
+}
+.pay__sms-choice li:hover {
+    background-color: gold;
+    color: red;
+    text-decoration: underline;
 }
