@@ -27,7 +27,7 @@
     overflow: hidden;
 }
 .pay {
-    display: block;
+    display: none;
 }
 .pay__header {
 	    font-size: 30px;
@@ -251,4 +251,87 @@ font-size: 13px;
     position: absolute;
     display: block;
     left: 14px;
+}
+/* sms section */
+.sms__header {
+        font-size: 29px;
+    font-weight: 100;
+    font-family: Arial,serif;
+    margin-left: 19px;
+}
+.sms__title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-left: 19px;
+}
+.sms__confirm {
+    outline: 1px dashed grey;
+    width: 570px;
+    height: 57px;
+    margin: 0 auto;
+    padding-top: 13px;
+    margin-top: 8px;
+    background-color: lightgoldenrodyellow;
+}
+.sms__confirm-text {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+.sms__text {
+    font-size: 16px;
+    margin-left: 23px;
+    margin-top: 14px;
+    font-weight: 600;
+}
+.sms__confirm-number {
+    font-size: 30px;
+}
+.sms__payment-descr {
+    width: 570px;
+    border-top: 1px solid lightgrey;
+    margin: 0 auto;
+    margin-top: 13px;
+    padding-top: 12px;
+}
+.sms__payment-descr-text {
+    color: lightgrey;
+    font-size: 10px;
+}
+
+.sms__footer {
+    height: 100px; /*mbd */
+    background: #EDF6FB;
+    margin-top: 18px;
+    padding-top: 19px;
+}
+.sms__footer-btn {
+    margin-left: 22px;
+    width: 280px;
+    height: 55px;
+    background-color: #62C008;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    float: left;
+}
+.sms__footer-btn:focus {
+    outline: none;
+}
+.sms__footer-btn:hover {
+    background-color: green;
+}
+.sms__footer-text {
+    font-size: 13px;
+    color: grey;
+    position: relative;
+    top: 17px;
+    left: 19px;
+    border-bottom: 1px dotted grey;
+    display: inline;
+    cursor: pointer;
 }
