@@ -253,6 +253,9 @@ font-size: 13px;
     left: 14px;
 }
 /* sms section */
+.sms {
+    display: block;
+}
 .sms__header {
         font-size: 29px;
     font-weight: 100;
@@ -334,4 +337,60 @@ font-size: 13px;
     border-bottom: 1px dotted grey;
     display: inline;
     cursor: pointer;
+}
+.sms__footer-text:hover {
+    border-bottom: none;
+}
+/* success section */
+.success {
+    display: none;
+    background: white;
+    border-radius: 10px;
+     width: 611px;
+    height: 323px;
+    margin: 0 auto;
+    padding-top: 19px;
+    overflow: hidden;
+}
+.success__ico {
+    background-image: url("img/success.png");
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-size: 100px;
+}
+.success__title {
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 22px;
+}
+.success__text {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 11px;
+}
+/* close button */
+.close-btn {
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    color: grey;
+    border: 2px solid grey;
+    float: right;
+    margin-right: 12px;
+    margin-top: -7px;
+    line-height: 19px;
+    cursor: pointer;
+}
+.close-btn__text {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+.close-btn:hover {
+    background: grey;
+    color: white;
 }

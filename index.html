@@ -8,8 +8,21 @@
 </head>
 <body>
     <div class="pay-background">
+
+    	<section class="success">
+    		<div class="close-btn">
+    			<p class="close-btn__text">X</p>
+    		</div>
+            <div class="success__ico"></div>
+            <h5 class="success__title">Ваш счет успешно пополнен</h5>
+            <p class="success__text">Объявление теперь горячее</p>
+        </section>
+
 		<div class="pay-wrapper">
 			<section class="pay">
+				<div class="close-btn">
+    				<p class="close-btn__text">X</p>
+    			</div>
 				<h4 class="pay__header">Пополнение счета</h4>
 				<h6 class="pay__title">Выберите тип платежа</h6>
 				<nav>
@@ -48,7 +61,7 @@
 						<p class="pay__text">Со счета спишется также комиссия оператора в размере 6 грн.</p>
 				</div>
 				<div class="pay__footer">
-					<button class="pay__footer-btn">Оплатить</button>
+					<button class="pay__footer-btn" id="privat-paybtn">Оплатить</button>
 					<p class="pay__footer-text">После нажатия кнопки "Оплатить" вы будете перенаправлены на сайт money.ua</p>
 				</div>
 			</section>
@@ -93,6 +106,7 @@
 				$('#pay__privat24').hide();
 				$('#pay__sms').show();
 				$('.pay__footer-text').hide();
+				$('.pay__footer-btn').removeAttr('id', 'privat-paybtn')
 				$('.pay__footer-btn').attr('id', 'sms-paybtn')
 			});
 
@@ -100,7 +114,8 @@
 				$('#pay__sms').hide();
 				$('#pay__privat24').show();
 				$('.pay__footer-text').show();
-				
+				$('.pay__footer-btn').removeAttr('id', 'sms-paybtn');
+				$('.pay__footer-btn').attr('id', 'privat-paybtn');
 			});
 
 			//hide-show sms pay-list
@@ -122,12 +137,17 @@
 				$('.pay').hide();
                 $('.sms').show();
 			})
+
             //back to pay menu
             $('#sms__back-btn').click(function(){
                 $('.sms').hide();
                 $('.pay').show();
             })
 
+            //close button
+            $('.close-btn').click(function(){
+            	$('.pay-background').hide();
+            })
 
     	})
     </script>
