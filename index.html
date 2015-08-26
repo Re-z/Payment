@@ -136,19 +136,23 @@
 			$('#sms-paybtn').click(function(){
 				$('.pay').hide();
                 $('.sms').show();
-			})
+			});
 
             //back to pay menu
             $('#sms__back-btn').click(function(){
                 $('.sms').hide();
                 $('.pay').show();
-            })
+            });
 
             //close button
             $('.close-btn').click(function(){
             	$('.pay-background').hide();
-            })
+            });
 
+			$('.sms__footer-btn').click(function(){
+				$('.pay-wrapper').hide();
+				$('.success').show();
+			});
     	})
     </script>
 </body>

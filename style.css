@@ -128,7 +128,7 @@ font-size: 13px;
 	border-color: lightskyblue; 
 }
 .pay__ammount-currency {
-	    display: block;
+    display: inline;
     position: relative;
     top: 24px;
     left: 5px;
@@ -161,6 +161,8 @@ font-size: 13px;
     border-radius: 5px;
     cursor: pointer;
     float: left;
+    position: relative;
+    z-index: 10;
 }
 .pay__footer-btn:focus {
     outline: none;
@@ -239,7 +241,7 @@ font-size: 13px;
     padding-bottom: 4px;
 }
 .pay__sms-choice li:hover {
-    background-color: lightgoldenrodyellow;
+    background-color: #FCFAE7;
     color: red;
     text-decoration: underline;
 }
@@ -269,13 +271,13 @@ font-size: 13px;
     margin-left: 19px;
 }
 .sms__confirm {
-    outline: 1px dashed grey;
+    outline: 1px dashed #C8BFB6;
     width: 570px;
     height: 57px;
     margin: 0 auto;
     padding-top: 13px;
     margin-top: 8px;
-    background-color: lightgoldenrodyellow;
+    background-color: #FFF7EA;
 }
 .sms__confirm-text {
     text-align: center;
@@ -299,7 +301,7 @@ font-size: 13px;
     padding-top: 12px;
 }
 .sms__payment-descr-text {
-    color: lightgrey;
+    color: #9C9C9C;
     font-size: 10px;
 }
 
@@ -330,7 +332,7 @@ font-size: 13px;
 }
 .sms__footer-text {
     font-size: 13px;
-    color: grey;
+    color: #808388;
     position: relative;
     top: 17px;
     left: 19px;
