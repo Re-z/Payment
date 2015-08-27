@@ -14,7 +14,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: black;
+	background: rgba(0,0,0,.5);
 	padding-top: 206px; 
 }
 .pay-wrapper {
@@ -25,6 +25,7 @@
     margin: 0 auto;
     padding-top: 19px;
     overflow: hidden;
+    box-shadow: 0 2px 30px -2px black;
 }
 .pay {
     display: none;
@@ -153,7 +154,7 @@ font-size: 13px;
     margin-left: 19px;
     width: 280px;
     height: 55px;
-    background-color: #62C008;
+    background-color: #81ce32;
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -163,12 +164,13 @@ font-size: 13px;
     float: left;
     position: relative;
     z-index: 10;
+    transition: .5s;
 }
 .pay__footer-btn:focus {
     outline: none;
 }
 .pay__footer-btn:hover {
-    background-color: green;
+    background-color: #64bf08;
 }
 .pay__footer-text {
         font-size: 13px;
@@ -315,7 +317,7 @@ font-size: 13px;
     margin-left: 22px;
     width: 280px;
     height: 55px;
-    background-color: #62C008;
+    background-color: #81ce32;
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -323,12 +325,13 @@ font-size: 13px;
     border-radius: 5px;
     cursor: pointer;
     float: left;
+    transition: .5s;
 }
 .sms__footer-btn:focus {
     outline: none;
 }
 .sms__footer-btn:hover {
-    background-color: green;
+    background-color: #64bf08;
 }
 .sms__footer-text {
     font-size: 13px;
@@ -353,6 +356,7 @@ font-size: 13px;
     margin: 0 auto;
     padding-top: 19px;
     overflow: hidden;
+    box-shadow: 0 2px 30px -2px black;
 }
 .success__ico {
     background-image: url("img/success.png");
